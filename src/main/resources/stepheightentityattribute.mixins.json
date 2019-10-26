@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "dev.emi.stepheightentityattribute.mixin",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+		"LivingEntityMixin",
+		"EntityMixin"
+	],
+	"client": [
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
