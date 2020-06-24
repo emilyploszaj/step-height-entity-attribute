@@ -12,7 +12,7 @@ import net.minecraft.entity.LivingEntity;
 @Mixin(Entity.class)
 public abstract class EntityMixin {
 
-	@Redirect(at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;stepHeight:F", opcode = Opcodes.GETFIELD), method = {"clipSneakingMovement", "handleCollisions"})
+	@Redirect(at = @At(value = "FIELD", target = "Lnet/minecraft/entity/Entity;stepHeight:F", opcode = Opcodes.GETFIELD), method = "adjustMovementForCollisions")
 	public float getStepHeight(Entity e) {
 		if (e instanceof LivingEntity) {
 			return StepHeightEntityAttributeMain.getStepHeight((LivingEntity) e);
