@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "step-height-entity-attribute",
-	"version": "1.0.0",
+	"version": "${version}",
 
 	"name": "Step Height Entity Attribute",
 	"description": "Adds a step height entity attribute",
@@ -17,19 +17,13 @@
 	"icon": "assets/stepheightentityattribute/icon.png",
 
 	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"dev.emi.stepheightentityattribute.StepHeightEntityAttributeMain"
-		]
-	},
 	"mixins": [
 		"stepheightentityattribute.mixins.json"
 	],
 
 	"depends": {
-		"fabricloader": ">=0.4.0"
-	},
-	"suggests": {
-		"flamingo": "*"
+		"fabricloader": ">=0.14.11",
+	    "minecraft": ">=1.19.3",
+	    "java": ">=17"
 	}
 }
