@@ -6,7 +6,7 @@ import net.minecraft.entity.attribute.EntityAttribute;
 public class StepHeightEntityAttributeMain {
 	public static EntityAttribute STEP_HEIGHT;
 
-	public static float getStepHeight(LivingEntity entity) {
-		return entity.stepHeight + (float) entity.getAttributeInstance(STEP_HEIGHT).getValue();
+	public static float getStepHeight(float baseStepHeight, LivingEntity entity) {
+		return baseStepHeight + (float) entity.getAttributeInstance(STEP_HEIGHT).getValue();
 	}
 }
