@@ -20,12 +20,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Entity.class)
 public abstract class EntityMixin {
-	@Shadow private float stepHeight;
-
-	@Inject(method = "getStepHeight", at = @At(value = "RETURN"), cancellable = true)
+	@Inject(method = "getStepHeight", at = @At(value = "TAIL"), cancellable = true)
 	public void getStepHeight(CallbackInfoReturnable<Float> cir) {
 		if((Object)this instanceof LivingEntity) {
-			cir.setReturnValue(StepHeightEntityAttributeMain.getStepHeight(this.stepHeight, (LivingEntity) (Object)this));
+			float baseStepHeight = cir.getReturnValue();
+			cir.setReturnValue(StepHeightEntityAttributeMain.getStepHeight(baseStepHeight, (LivingEntity) (Object)this));
 		}
 	}
 }
