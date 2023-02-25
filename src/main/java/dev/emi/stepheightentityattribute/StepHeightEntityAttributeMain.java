@@ -7,6 +7,6 @@ public class StepHeightEntityAttributeMain {
 	public static EntityAttribute STEP_HEIGHT;
 
 	public static float getStepHeight(LivingEntity entity) {
-		return entity.stepHeight + (float) entity.getAttributeInstance(STEP_HEIGHT).getValue();
+		return entity.getStepHeight() + (float) entity.getAttributeInstance(STEP_HEIGHT).getValue();
 	}
 }
